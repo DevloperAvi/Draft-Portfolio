@@ -5,83 +5,127 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MCA Notes by Arvind Sahu | Dr. Ram Manohar Lohia Avadh University, Ayodhya</title>
   <meta name="description" content="Buy well-structured MCA Semester 1 notes (PDF) by Arvind Sahu for Dr. Ram Manohar Lohia Avadh University, Ayodhya. Secure checkout via Razorpay or UPI." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%232c3e50'/%3E%3Ctext x='50' y='62' text-anchor='middle' font-size='56' font-family='Arial' fill='white'%3EMS%3C/text%3E%3C/svg%3E"/>
   <style>
     :root{
-      --bg:#f5f7fb; --card:#ffffff; --ink:#1f2937; --muted:#6b7280; --brand:#2c3e50; --accent:#0ea5e9; --ring:rgba(14,165,233,.35);
+      --bg:#f5f7fb; --card:#ffffff; --ink:#0f1724; --muted:#6b7280; --brand:#0f1724; --accent:#0ea5e9; --ring:rgba(14,165,233,.18);
     }
     *{box-sizing:border-box}
-    html,body{margin:0;height:100%;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+    html,body{margin:0;height:100%;font-family:'Quicksand',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased}
+    h1,h2,h3,h4,.title{font-family:'Quicksand',sans-serif}
     a{color:inherit}
-    .container{max-width:1100px;margin-inline:auto;padding:24px}
-    header{background:linear-gradient(135deg,var(--brand),#111827);color:#fff}
-    .topbar{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:22px 24px}
-    .brand{display:flex;gap:12px;align-items:center}
-    .brand-logo{width:42px;height:42px;border-radius:12px;background:#fff1;display:grid;place-items:center;font-weight:700}
-    .brand h1{margin:0;font-size:18px;line-height:1.2}
-    .brand small{display:block;color:#cbd5e1}
-    .cart-btn{appearance:none;border:0;background:#fff1;color:#fff;padding:10px 14px;border-radius:12px;cursor:pointer;display:flex;gap:8px;align-items:center}
-    .cart-btn:hover{background:#fff2}
 
-    .hero{padding:18px 24px 36px}
-    .hero h2{margin:0 0 8px;font-size:28px}
-    .hero p{margin:0;color:#e5e7eb}
-    .hero .cta{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap}
-    .btn{appearance:none;border:0;border-radius:12px;padding:12px 16px;cursor:pointer;font-weight:600}
+    /* Layout container */
+    .container{max-width:1100px;margin-inline:auto;padding:20px}
+
+    /* Header / topbar */
+    header{background:linear-gradient(135deg,#123243,#0b1220);color:#fff}
+    .topbar{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:16px;flex-wrap:wrap}
+    .brand{display:flex;gap:12px;align-items:center;min-width:0}
+    .brand-logo{width:44px;height:44px;border-radius:10px;background:rgba(255,255,255,0.06);display:grid;place-items:center;font-weight:700}
+    .brand h1{margin:0;font-size:18px;line-height:1}
+    .brand small{display:block;color:#cbd5e1;font-size:13px}
+
+    /* Cart button */
+    .cart-btn{appearance:none;border:0;background:transparent;color:#fff;padding:8px 12px;border-radius:10px;cursor:pointer;display:flex;gap:8px;align-items:center;font-weight:700}
+    .cart-btn:hover{background:rgba(255,255,255,0.03)}
+
+    /* Hero */
+    .hero{padding:18px 20px 28px}
+    .hero h2{margin:0 0 8px;font-size:26px}
+    .hero p{margin:0;color:#cbd5e1}
+    .hero .cta{margin-top:12px;display:flex;gap:10px;flex-wrap:wrap}
+
+    .btn{appearance:none;border:0;border-radius:12px;padding:10px 14px;cursor:pointer;font-weight:600}
     .btn-primary{background:var(--accent);color:#fff}
-    .btn-primary:hover{filter:brightness(.95)}
-    .btn-ghost{background:#fff1;color:#fff}
-    .btn-ghost:hover{background:#fff2}
+    .btn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.06)}
 
-    /* Products */
-    .section{padding:12px 0 32px}
-    .section h3{margin:0 0 12px;font-size:22px}
-    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
-    .card{grid-column:span 12;background:var(--card);border-radius:16px;box-shadow:0 10px 24px rgba(2,6,23,.08);border:1px solid #e5e7eb;overflow:hidden}
-    @media(min-width:640px){.card{grid-column:span 6}}
-    @media(min-width:960px){.card{grid-column:span 4}}
-    .card-inner{padding:16px;display:flex;flex-direction:column;gap:12px}
-    .badge{display:inline-block;background:#e0f2fe;color:#0369a1;padding:4px 10px;border-radius:999px;font-size:12px}
-    .title{font-weight:700}
-    .muted{color:var(--muted)}
+    /* Sections */
+    .section{padding:12px 0 28px}
+    .section h3{margin:0 0 12px;font-size:20px}
+
+    /* Product grid – responsive: 1 column mobile, 2 tablet, 3 desktop */
+    .grid{display:grid;grid-template-columns:repeat(1,1fr);gap:16px}
+    @media(min-width:640px){.grid{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:1000px){.grid{grid-template-columns:repeat(3,1fr)}}
+
+    .card{background:var(--card);border-radius:12px;box-shadow:0 8px 20px rgba(2,6,23,.06);border:1px solid #e6eef6;overflow:hidden;display:flex;flex-direction:column}
+    .card-inner{padding:14px;display:flex;flex-direction:column;gap:10px;flex:1}
+    .badge{display:inline-block;background:#e6f6ff;color:#0369a1;padding:4px 10px;border-radius:999px;font-size:12px}
+    .title{font-weight:700;font-size:15px}
+    .muted{color:var(--muted);font-size:13px}
     .price{margin-left:auto;font-weight:800}
     .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-    .actions{display:flex;gap:8px;margin-top:auto}
-    .actions .btn{flex:1}
 
-    .infobar{background:#ecfeff;border:1px solid #bae6fd;padding:12px;border-radius:12px;margin:8px 0}
+    .actions{display:flex;gap:8px;margin-top:auto}
+    .actions .btn{flex:1;padding:10px;border-radius:10px}
+
+    /* Make action buttons stack on small screens */
+    @media(max-width:520px){
+      .actions{flex-direction:column}
+      .actions .btn{width:100%}
+    }
+
+    .infobar{background:#ecfeff;border:1px solid #bae6fd;padding:12px;border-radius:10px;margin:10px 0}
 
     /* Cart Drawer (div-based) */
-    .drawer{position:fixed;inset:0;display:none;z-index:9999}
+    .drawer{position:fixed;inset:0;display:none;z-index:1100}
     .drawer.open{display:block}
-    .backdrop{position:absolute;inset:0;background:rgba(2,6,23,.45);z-index:999}
-    .panel{position:absolute;right:0;top:0;height:100%;width:min(500px,100%);background:#fff;border-left:1px solid #e5e7eb;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .28s ease;z-index:1000}
+    .backdrop{position:absolute;inset:0;background:rgba(2,6,23,.45);z-index:1100}
+    .panel{position:absolute;right:0;top:0;height:100%;width:420px;max-width:100%;background:#fff;border-left:1px solid #e9eef6;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .28s ease;z-index:1110}
     .drawer.open .panel{transform:translateX(0)}
-    .panel header{background:#fff;color:var(--ink);border-bottom:1px solid #e5e7eb}
-    .panel header .topbar{padding:14px 16px}
-    .panel h4{margin:0;font-size:18px}
-    .panel .content{padding:16px;display:flex;flex-direction:column;gap:12px;overflow:auto}
+
+    .panel header{background:#fff;color:var(--ink);border-bottom:1px solid #f1f5f9}
+    .panel header .topbar{padding:12px 14px;display:flex;align-items:center;justify-content:space-between}
+    .panel h4{margin:0;font-size:16px}
+    .panel .content{padding:14px;display:flex;flex-direction:column;gap:12px;overflow:auto}
     .line{display:flex;gap:8px;align-items:center}
-    .line strong{flex:1}
+    .line strong{flex:1;font-size:14px}
     .qty{display:flex;gap:8px;align-items:center}
-    .qty button{padding:6px 10px;border-radius:8px;border:1px solid #e5e7eb;background:#f8fafc}
+    .qty button{padding:6px 10px;border-radius:8px;border:1px solid #e5e7eb;background:#f8fafc;cursor:pointer}
     .totals{margin-top:8px;border-top:1px dashed #e5e7eb;padding-top:8px}
     .checkout{display:flex;flex-direction:column;gap:8px}
     .field{display:flex;flex-direction:column;gap:6px}
-    .field input{padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px;outline:none}
-    .field input:focus{box-shadow:0 0 0 4px var(--ring);border-color:#93c5fd}
+    .field label{font-size:13px;color:#374151}
+    .field input{padding:10px 12px;border:1px solid #e5e7eb;border-radius:8px;outline:none}
+    .field input:focus{box-shadow:0 6px 18px var(--ring);border-color:#93c5fd}
     .tiny{font-size:12px;color:var(--muted)}
     .divider{height:1px;background:#e5e7eb;margin:8px 0}
 
-    footer{background:#0b1220;color:#cbd5e1;margin-top:32px}
-    footer .container{padding-top:28px;padding-bottom:28px}
-    footer a{color:#e5e7eb}
-    .cols{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
-    .col{grid-column:span 12}
-    @media(min-width:800px){.col{grid-column:span 4}}
+    /* Make drawer full-screen on small devices */
+    @media(max-width:520px){
+      .panel{width:100%;right:0}
+      .panel .topbar{padding:10px}
+      .panel .content{padding:12px}
+    }
 
-    .legal{font-size:12px;color:#94a3b8;margin-top:12px}
-    details summary{cursor:pointer}
+    /* Footer */
+    footer{background:#071023;color:#cbd5e1;margin-top:28px}
+    footer .container{padding-top:20px;padding-bottom:20px}
+    .cols{display:grid;grid-template-columns:repeat(1,1fr);gap:12px}
+    @media(min-width:800px){.cols{grid-template-columns:repeat(3,1fr)}}
+    .legal{font-size:12px;color:#98a3b3;margin-top:12px}
+
+    /* Small helpers */
+    .muted small{font-size:12px}
+  
+
+    /* Policy cards (Refund & Privacy) */
+    .policy-grid{display:grid;gap:16px;margin-top:8px}
+    @media(min-width:800px){.policy-grid{grid-template-columns:1fr 1fr}}
+    .policy-card{background:linear-gradient(180deg,#ffffff,#fbfdff);border:1px solid #e6eef6;padding:16px;border-radius:12px;box-shadow:0 8px 20px rgba(2,6,23,.04)}
+    .policy-card h4{margin:0 0 8px;font-size:18px}
+    .policy-card .meta{color:var(--muted);font-size:13px;margin-bottom:8px}
+    .policy-list{margin:8px 0 12px;padding-left:18px}
+    .policy-cta{display:flex;gap:8px;flex-wrap:wrap}
+    .policy-cta a{padding:10px 12px;border-radius:10px;text-decoration:none;font-weight:600}
+    .btn-primary-ghost{background:#0ea5e9;color:#fff}
+    .btn-outline{background:transparent;border:1px solid #e6eef6;color:var(--ink)}
+    .small-note{font-size:13px;color:var(--muted);margin-top:10px}
+    details.policy-details summary{font-weight:700;cursor:pointer;margin-bottom:6px}
   </style>
   <script type="application/ld+json">
   {
@@ -153,7 +197,10 @@
     <div class="panel">
       <header>
         <div class="topbar">
-          <h4>🛒 Your Cart</h4>
+          <div style="display:flex;align-items:center;gap:8px;min-width:0">
+            <button class="back-btn" id="mobileBackBtn" aria-label="Back" title="Back">←</button>
+            <h4 style="margin:0">🛒 Your Cart</h4>
+          </div>
           <button class="cart-btn" data-close>Close ✕</button>
         </div>
       </header>
@@ -221,7 +268,7 @@
       {id:'mca104', title:'MCA 104 - Operating Systems', file:'MCA 104.pdf', price:49},
       {id:'mca105', title:'MCA 105 - Programming with MATLAB', file:'MCA 105.pdf', price:49},
       {id:'mca106', title:'MCA 106 - Cyber Security & Information System', file:'MCA 106.pdf', price:49},
-      {id:'sem1', title:'Semester 1 - Subject Details', file:'MCA_Sem1_Details.pdf', price:1}
+      {id:'sem1', title:'Semester 1 - Subject Details', file:'MCA_Sem1_Details.pdf', price:19}
     ];
 
     const formatINR = n => `₹${n.toLocaleString('en-IN')}`;
@@ -267,8 +314,32 @@
     const btnOpen = document.getElementById('openCart');
     const subtotalEl = document.getElementById('subtotal');
 
-    function openCart(){ drawer.classList.add('open'); document.body.style.overflow = 'hidden'; }
-    function closeCart(){ drawer.classList.remove('open'); document.body.style.overflow = 'auto'; }
+    function openCart(){
+      if (!drawer.classList.contains('open')){
+        drawer.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        try{ history.pushState({cartOpen:true}, '', '#cart'); }catch(e){}
+      }
+    }
+    function closeCart(){
+      if(!drawer.classList.contains('open')) return;
+      closeCartWithoutHistory();
+      if (history.state && history.state.cartOpen){ try{ history.back(); }catch(e){} }
+    }
+    function closeCartWithoutHistory(){
+      drawer.classList.remove('open');
+      document.body.style.overflow = 'auto';
+    }
+    // Close cart on browser back (mobile hardware back)
+    window.addEventListener('popstate', function(e){
+      if (drawer.classList.contains('open')){
+        // popstate already fired because history was popped; just close without touching history
+        closeCartWithoutHistory();
+      }
+    });
+    // Mobile back button inside the cart (if present)
+    const mobileBackBtn = document.getElementById('mobileBackBtn');
+    if(mobileBackBtn) mobileBackBtn.addEventListener('click', closeCart);
     btnOpen.addEventListener('click', openCart);
 
     function refreshCartUI(){
@@ -386,14 +457,50 @@
     document.getElementById('yr').textContent = new Date().getFullYear();
   </script>
 
-  <!-- Optional: Simple privacy/refund anchors -->
-  <section class="container section" id="refund">
-    <h3>Refund Policy</h3>
-    <p>If you do not receive your notes after a successful payment, contact us on WhatsApp within 24 hours with your payment reference for an immediate resend or a full refund.</p>
-  </section>
-  <section class="container section" id="privacy">
-    <h3>Privacy</h3>
-    <p>We collect your name, WhatsApp number and (optionally) email to deliver your notes. We do not sell your data. For Razorpay payments, card/UPI details are processed by Razorpay on their secure checkout; we do not see or store those details.</p>
+  <!-- Policies: Refund & Privacy (improved UI) -->
+  <section class="container section" id="policies-grid">
+    <h3>Policies</h3>
+    <div class="policy-grid">
+      <div class="policy-card" id="refund">
+        <h4>Refund Policy</h4>
+        <div class="meta">Fast, fair and clear — we aim to deliver within 24 hours</div>
+        <ul class="policy-list">
+          <li><strong>Delivery promise:</strong> We deliver PDFs to the WhatsApp number or email you provide within <strong>24 hours</strong> of successful payment.</li>
+          <li><strong>Refund window:</strong> If you do not receive the files within 24 hours, you are eligible for a full refund.</li>
+          <li><strong>How to request:</strong> Send a WhatsApp message to <a href="https://wa.me/918299243030" target="_blank" rel="noopener">+91 8299243030</a> with your payment reference (Razorpay / UPI txn id) and your name.</li>
+          <li><strong>Automatic verification:</strong> Please share the payment screenshot if available; this speeds up the process.</li>
+        </ul>
+        <div class="policy-cta">
+          <a class="btn-primary-ghost" href="https://wa.me/918299243030" target="_blank" rel="noopener">Contact on WhatsApp</a>
+          <a class="btn-outline" href="mailto:engravi13@gmail.com">Email Support</a>
+        </div>
+        <div class="small-note">Note: Refunds are processed to the original payment method within 3–5 business days after verification.</div>
+        <details class="policy-details">
+          <summary>Full refund conditions</summary>
+          <p>We guarantee a full refund if we cannot deliver the purchased notes within 24 hours after confirmed payment. Refunds are not issued for buyer errors (wrong email/number) unless the seller is able to contact and correct details.</p>
+        </details>
+      </div>
+
+      <div class="policy-card" id="privacy">
+        <h4>Privacy</h4>
+        <div class="meta">We collect only what we need to deliver your purchase</div>
+        <ul class="policy-list">
+          <li><strong>What we collect:</strong> name, WhatsApp number, and email (optional).</li>
+          <li><strong>Why:</strong> to deliver your PDFs and to contact you about your order/refund.</li>
+          <li><strong>How long:</strong> Buyer contact details are kept for up to 90 days for support and refund purposes, then deleted unless needed for ongoing support.</li>
+          <li><strong>Third parties:</strong> Payment details (card/UPI) are handled by Razorpay — we never see raw card or bank credentials.</li>
+        </ul>
+        <div class="policy-cta">
+          <a class="btn-outline" href="#privacy" onclick="document.getElementById('buyerEmail').focus();return false">Update contact</a>
+          <a class="btn-primary-ghost" href="https://wa.me/918299243030" target="_blank" rel="noopener">Ask on WhatsApp</a>
+        </div>
+        <div class="small-note">We do not sell your data. For details on data handling, reply on WhatsApp or email us and we'll send a full copy of the privacy notice.</div>
+        <details class="policy-details">
+          <summary>Data retention & security</summary>
+          <p>Files are stored privately. When auto‑delivery is enabled, we use signed, time-limited URLs so downloads expire after a set period. Server secrets (Razorpay secret, storage credentials) are kept out of the client and protected by your hosting provider.</p>
+        </details>
+      </div>
+    </div>
   </section>
 </body>
 </html>
