@@ -1,111 +1,398 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MCA Notes by Arvind Sahu</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MCA Notes by Arvind Sahu | Dr. Ram Manohar Lohia Avadh University, Ayodhya</title>
+  <meta name="description" content="Buy well-structured MCA Semester 1 notes (PDF) by Arvind Sahu for Dr. Ram Manohar Lohia Avadh University, Ayodhya. Secure checkout via Razorpay or UPI." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%232c3e50'/%3E%3Ctext x='50' y='62' text-anchor='middle' font-size='56' font-family='Arial' fill='white'%3EMS%3C/text%3E%3C/svg%3E"/>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f8f9fa;
-      margin: 0;
-      padding: 0;
+    :root{
+      --bg:#f5f7fb; --card:#ffffff; --ink:#1f2937; --muted:#6b7280; --brand:#2c3e50; --accent:#0ea5e9; --ring:rgba(14,165,233,.35);
     }
-    header {
-      background: #2c3e50;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 28px;
-    }
-    header p {
-      margin: 5px 0 0;
-      font-size: 16px;
-    }
-    .container {
-      max-width: 900px;
-      margin: 20px auto;
-      padding: 20px;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    h2 {
-      color: #2c3e50;
-      margin-bottom: 15px;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 5px;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    ul li {
-      background: #f4f4f4;
-      margin: 10px 0;
-      padding: 12px;
-      border-radius: 5px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    ul li a {
-      text-decoration: none;
-      color: #2c3e50;
-      font-weight: bold;
-    }
-    ul li a:hover {
-      color: #007bff;
-    }
-    .contact {
-      margin-top: 30px;
-      padding: 15px;
-      background: #eaf4fc;
-      border-left: 4px solid #007bff;
-      border-radius: 5px;
-    }
-    footer {
-      margin-top: 40px;
-      background: #2c3e50;
-      color: #fff;
-      text-align: center;
-      padding: 15px;
-    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+    a{color:inherit}
+    .container{max-width:1100px;margin-inline:auto;padding:24px}
+    header{background:linear-gradient(135deg,var(--brand),#111827);color:#fff}
+    .topbar{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:22px 24px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .brand-logo{width:42px;height:42px;border-radius:12px;background:#fff1;display:grid;place-items:center;font-weight:700}
+    .brand h1{margin:0;font-size:18px;line-height:1.2}
+    .brand small{display:block;color:#cbd5e1}
+    .cart-btn{appearance:none;border:0;background:#fff1;color:#fff;padding:10px 14px;border-radius:12px;cursor:pointer;display:flex;gap:8px;align-items:center}
+    .cart-btn:hover{background:#fff2}
+
+    .hero{padding:18px 24px 36px}
+    .hero h2{margin:0 0 8px;font-size:28px}
+    .hero p{margin:0;color:#e5e7eb}
+    .hero .cta{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap}
+    .btn{appearance:none;border:0;border-radius:12px;padding:12px 16px;cursor:pointer;font-weight:600}
+    .btn-primary{background:var(--accent);color:#fff}
+    .btn-primary:hover{filter:brightness(.95)}
+    .btn-ghost{background:#fff1;color:#fff}
+    .btn-ghost:hover{background:#fff2}
+
+    /* Products */
+    .section{padding:12px 0 32px}
+    .section h3{margin:0 0 12px;font-size:22px}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+    .card{grid-column:span 12;background:var(--card);border-radius:16px;box-shadow:0 10px 24px rgba(2,6,23,.08);border:1px solid #e5e7eb;overflow:hidden}
+    @media(min-width:640px){.card{grid-column:span 6}}
+    @media(min-width:960px){.card{grid-column:span 4}}
+    .card-inner{padding:16px;display:flex;flex-direction:column;gap:12px}
+    .badge{display:inline-block;background:#e0f2fe;color:#0369a1;padding:4px 10px;border-radius:999px;font-size:12px}
+    .title{font-weight:700}
+    .muted{color:var(--muted)}
+    .price{margin-left:auto;font-weight:800}
+    .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+    .actions{display:flex;gap:8px;margin-top:auto}
+    .actions .btn{flex:1}
+
+    .infobar{background:#ecfeff;border:1px solid #bae6fd;padding:12px;border-radius:12px;margin:8px 0}
+
+    /* Cart Drawer */
+    .drawer{position:fixed;inset:0;display:none}
+    .drawer[open]{display:block}
+    .backdrop{position:absolute;inset:0;background:rgba(2,6,23,.45)}
+    .panel{position:absolute;right:0;top:0;height:100%;width:min(500px,100%);background:#fff;border-left:1px solid #e5e7eb;display:flex;flex-direction:column}
+    .panel header{background:#fff;color:var(--ink);border-bottom:1px solid #e5e7eb}
+    .panel header .topbar{padding:14px 16px}
+    .panel h4{margin:0;font-size:18px}
+    .panel .content{padding:16px;display:flex;flex-direction:column;gap:12px;overflow:auto}
+    .line{display:flex;gap:8px;align-items:center}
+    .line strong{flex:1}
+    .qty{display:flex;gap:8px;align-items:center}
+    .qty button{padding:6px 10px;border-radius:8px;border:1px solid #e5e7eb;background:#f8fafc}
+    .totals{margin-top:8px;border-top:1px dashed #e5e7eb;padding-top:8px}
+    .checkout{display:flex;flex-direction:column;gap:8px}
+    .field{display:flex;flex-direction:column;gap:6px}
+    .field input{padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px;outline:none}
+    .field input:focus{box-shadow:0 0 0 4px var(--ring);border-color:#93c5fd}
+    .tiny{font-size:12px;color:var(--muted)}
+    .divider{height:1px;background:#e5e7eb;margin:8px 0}
+
+    footer{background:#0b1220;color:#cbd5e1;margin-top:32px}
+    footer .container{padding-top:28px;padding-bottom:28px}
+    footer a{color:#e5e7eb}
+    .cols{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+    .col{grid-column:span 12}
+    @media(min-width:800px){.col{grid-column:span 4}}
+
+    .legal{font-size:12px;color:#94a3b8;margin-top:12px}
+    details summary{cursor:pointer}
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Store",
+    "name": "MCA Notes by Arvind Sahu",
+    "url": "",
+    "image": "",
+    "description": "MCA notes (PDF) for Dr. Ram Manohar Lohia Avadh University, Ayodhya.",
+    "sameAs": [],
+    "address": {"@type":"PostalAddress","addressCountry":"IN"},
+    "makesOffer": [
+      {"@type":"Offer","priceCurrency":"INR","price":"49","itemOffered":{"@type":"Product","name":"MCA 101 - Programming in C & Data Structure"}},
+      {"@type":"Offer","priceCurrency":"INR","price":"49","itemOffered":{"@type":"Product","name":"MCA 102 - Computer Organization & Architecture"}}
+    ]
+  }
+  </script>
 </head>
 <body>
-
   <header>
-    <h1>MCA Notes Collection</h1>
-    <p>Well-structured MCA notes for all Semester 1 subjects</p>
+    <div class="topbar container">
+      <div class="brand">
+        <div class="brand-logo" aria-hidden="true">📝</div>
+        <div>
+          <h1>MCA Notes by Arvind Sahu</h1>
+          <small>Dr. Ram Manohar Lohia Avadh University, Ayodhya</small>
+        </div>
+      </div>
+      <button class="cart-btn" id="openCart" aria-label="Open cart">🛒 <span id="cartCount">0</span></button>
+    </div>
+    <div class="hero container">
+      <h2>Well‑structured MCA Semester 1 Notes (PDF)</h2>
+      <p>Clear theory • Exam‑oriented • Instant access after payment</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#products">Browse Notes</a>
+        <a class="btn btn-ghost" href="#contact">Contact</a>
+      </div>
+    </div>
   </header>
 
-  <div class="container">
-    <h2>Available Notes (PDF)</h2>
-    <ul>
-      <li><a href="MCA 101.pdf" target="_blank">MCA 101 - Programming in C & Data Structure</a></li>
-      <li><a href="MCA 102.pdf" target="_blank">MCA 102 - Computer Organization & Architecture</a></li>
-      <li><a href="MCA 103.pdf" target="_blank">MCA 103 - Object Oriented System with C++</a></li>
-      <li><a href="MCA 104.pdf" target="_blank">MCA 104 - Operating Systems</a></li>
-      <li><a href="MCA 105.pdf" target="_blank">MCA 105 - Programming with MATLAB</a></li>
-      <li><a href="MCA 106.pdf" target="_blank">MCA 106 - Cyber Security & Information System</a></li>
-      <li><a href="MCA_Sem1_Details.pdf" target="_blank">Semester 1 - Subject Details</a></li>
-    </ul>
+  <main class="container">
+    <div class="infobar">💡 Tip: Click a title to preview the file. Use <strong>Add to Cart</strong> to purchase securely via Razorpay or UPI.</div>
 
-    <div class="contact">
-      <h2>Contact Information</h2>
-      <p><strong>Name:</strong> Arvind Sahu</p>
-      <p><strong>Phone:</strong> <a href="tel:8299243030">8299243030</a></p>
-      <p>If you are interested in purchasing these notes, please contact me directly.</p>
+    <section id="products" class="section">
+      <h3>Available Notes (PDF)</h3>
+      <div class="grid" id="productGrid"><!-- cards injected by JS --></div>
+    </section>
+
+    <section class="section" id="faq">
+      <h3>FAQ</h3>
+      <details open>
+        <summary>How do I receive the PDF after payment?</summary>
+        <p>Right now delivery is manual: after successful payment, you will see a success screen and also receive a WhatsApp confirmation. The PDF(s) will be shared to your WhatsApp/email within a few minutes using the details you enter at checkout.</p>
+      </details>
+      <details>
+        <summary>Can I pay with UPI?</summary>
+        <p>Yes, choose the UPI option at checkout. It opens a UPI link with the exact amount. After payment, tap <em>"I have paid"</em> to confirm.</p>
+      </details>
+      <details>
+        <summary>Refunds</summary>
+        <p>If you paid but didn’t receive the notes, message on WhatsApp with your phone number and payment reference. 100% refund if we can’t deliver within 24 hours.</p>
+      </details>
+    </section>
+  </main>
+
+  <!-- Cart Drawer -->
+  <dialog class="drawer" id="cartDrawer" aria-label="Shopping cart">
+    <div class="backdrop" data-close></div>
+    <div class="panel">
+      <header>
+        <div class="topbar">
+          <h4>🛒 Your Cart</h4>
+          <button class="cart-btn" data-close>Close ✕</button>
+        </div>
+      </header>
+      <div class="content">
+        <div id="cartLines"><!-- items --></div>
+        <div class="totals">
+          <div class="line"><strong>Subtotal</strong><span id="subtotal">₹0</span></div>
+          <div class="line"><span class="muted tiny">GST included (if applicable)</span></div>
+        </div>
+        <div class="divider"></div>
+        <div class="checkout">
+          <div class="field">
+            <label for="buyerName">Your name</label>
+            <input id="buyerName" placeholder="e.g., Arvind Sahu"/>
+          </div>
+          <div class="field">
+            <label for="buyerPhone">WhatsApp number</label>
+            <input id="buyerPhone" placeholder="10‑digit mobile"/>
+          </div>
+          <div class="field">
+            <label for="buyerEmail">Email (optional)</label>
+            <input id="buyerEmail" placeholder="name@example.com"/>
+          </div>
+          <button class="btn btn-primary" id="payRzp">Pay with Razorpay</button>
+          <button class="btn" id="payUpi" style="background:#10b981;color:#fff">Pay with UPI</button>
+          <button class="btn" id="whOrder" style="background:#25D366;color:#fff">Order on WhatsApp</button>
+          <p class="tiny">By paying, you agree to our <a href="#policies">Terms, Privacy & Refund Policy</a>.</p>
+        </div>
+      </div>
     </div>
-  </div>
+  </dialog>
 
-  <footer>
-    <p>&copy; 2025 Arvind Sahu | MCA Notes</p>
+  <footer id="policies">
+    <div class="container cols">
+      <div class="col">
+        <h4>About</h4>
+        <p>MCA notes prepared by <strong>Arvind Sahu</strong> for <em>Dr. Ram Manohar Lohia Avadh University, Ayodhya</em>. Concise, exam‑oriented PDFs for Semester 1.</p>
+      </div>
+      <div class="col">
+        <h4>Policies</h4>
+        <ul>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#refund">Refund Policy</a></li>
+          <li><a href="#privacy">Privacy</a></li>
+        </ul>
+      </div>
+      <div class="col" id="contact">
+        <h4>Contact</h4>
+        <p><strong>Name:</strong> Arvind Sahu</p>
+        <p><strong>Phone/WhatsApp:</strong> <a href="https://wa.me/918299243030" target="_blank" rel="noopener">+91 8299243030</a></p>
+        <p><strong>Email:</strong> <a href="mailto:arvindsahu@example.com">arvindsahu@example.com</a></p>
+      </div>
+    </div>
+    <div class="container legal">© <span id="yr"></span> Arvind Sahu · MCA Notes · All rights reserved.</div>
   </footer>
 
+  <!-- Razorpay Checkout (replace test key) -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js" defer></script>
+  <script>
+    // ====== PRODUCT DATA ======
+    const PRODUCTS = [
+      {id:'mca101', title:'MCA 101 - Programming in C & Data Structure', file:'MCA 101.pdf', price:49},
+      {id:'mca102', title:'MCA 102 - Computer Organization & Architecture', file:'MCA 102.pdf', price:49},
+      {id:'mca103', title:'MCA 103 - Object Oriented System with C++', file:'MCA 103.pdf', price:49},
+      {id:'mca104', title:'MCA 104 - Operating Systems', file:'MCA 104.pdf', price:49},
+      {id:'mca105', title:'MCA 105 - Programming with MATLAB', file:'MCA 105.pdf', price:49},
+      {id:'mca106', title:'MCA 106 - Cyber Security & Information System', file:'MCA 106.pdf', price:49},
+      {id:'sem1', title:'Semester 1 - Subject Details', file:'MCA_Sem1_Details.pdf', price:19}
+    ];
+
+    const formatINR = n => `₹${n.toLocaleString('en-IN')}`;
+
+    // ====== RENDER PRODUCTS ======
+    const grid = document.getElementById('productGrid');
+    grid.innerHTML = PRODUCTS.map(p => `
+      <article class="card" data-id="${p.id}">
+        <div class="card-inner">
+          <span class="badge">PDF</span>
+          <div class="row">
+            <div class="title">${p.title}</div>
+            <div class="price">${formatINR(p.price)}</div>
+          </div>
+          <div class="muted">University: Dr. Ram Manohar Lohia Avadh University, Ayodhya</div>
+          <div class="actions">
+            <a class="btn" style="background:#f1f5f9" href="${encodeURI(p.file)}" target="_blank" rel="noopener">Preview</a>
+            <button class="btn btn-primary" data-add="${p.id}">Add to Cart</button>
+          </div>
+        </div>
+      </article>
+    `).join('');
+
+    // ====== CART LOGIC ======
+    const state = { cart: JSON.parse(localStorage.getItem('mca_cart')||'{}') };
+    const cartCount = () => Object.values(state.cart).reduce((a,b)=>a+b,0);
+    const cartTotal = () => Object.entries(state.cart).reduce((sum,[id,qty]) => {
+      const p = PRODUCTS.find(x=>x.id===id); return sum + (p?p.price*qty:0);
+    },0);
+    const saveCart = () => localStorage.setItem('mca_cart', JSON.stringify(state.cart));
+
+    function addToCart(id){ state.cart[id] = (state.cart[id]||0)+1; saveCart(); refreshCartUI(); }
+    function changeQty(id,delta){ state.cart[id] = Math.max(0,(state.cart[id]||0)+delta); if(state.cart[id]===0) delete state.cart[id]; saveCart(); refreshCartUI(); }
+
+    document.body.addEventListener('click',e=>{
+      const add = e.target.closest('[data-add]');
+      if(add){ addToCart(add.getAttribute('data-add')); openCart(); }
+      if(e.target.matches('[data-close]')) closeCart();
+    });
+
+    // ====== CART UI ======
+    const drawer = document.getElementById('cartDrawer');
+    const btnOpen = document.getElementById('openCart');
+    const subtotalEl = document.getElementById('subtotal');
+
+    function openCart(){ drawer.setAttribute('open',''); }
+    function closeCart(){ drawer.removeAttribute('open'); }
+    btnOpen.addEventListener('click', openCart);
+
+    function refreshCartUI(){
+      document.getElementById('cartCount').textContent = cartCount();
+      subtotalEl.textContent = formatINR(cartTotal());
+      const lines = Object.entries(state.cart);
+      const wrap = document.getElementById('cartLines');
+      if(!lines.length){
+        wrap.innerHTML = '<p class="muted">Your cart is empty.</p>';
+        return;
+      }
+      wrap.innerHTML = lines.map(([id,qty])=>{
+        const p = PRODUCTS.find(x=>x.id===id);
+        return `
+          <div class="line">
+            <strong>${p.title}</strong>
+            <div class="qty">
+              <button data-q="-1" data-id="${id}">−</button>
+              <span>${qty}</span>
+              <button data-q="1" data-id="${id}">+</button>
+            </div>
+            <span>${formatINR(p.price*qty)}</span>
+          </div>`;
+      }).join('');
+      // bind qty buttons
+      wrap.querySelectorAll('[data-q]').forEach(btn=>{
+        btn.addEventListener('click',()=>changeQty(btn.getAttribute('data-id'), Number(btn.getAttribute('data-q'))));
+      });
+    }
+
+    refreshCartUI();
+
+    // ====== CHECKOUT ======
+    const payBtn = document.getElementById('payRzp');
+    const payUpi = document.getElementById('payUpi');
+    const whOrder = document.getElementById('whOrder');
+    const nameEl = document.getElementById('buyerName');
+    const phoneEl = document.getElementById('buyerPhone');
+    const emailEl = document.getElementById('buyerEmail');
+
+    function orderSummary(){
+      const items = Object.entries(state.cart).map(([id,qty])=>{
+        const p = PRODUCTS.find(x=>x.id===id); return `${p.title} x ${qty}`;
+      }).join(', ');
+      return items || 'No items';
+    }
+
+    function requireBuyer(){
+      const name = nameEl.value.trim();
+      const phone = phoneEl.value.trim();
+      if(!name){ alert('Please enter your name.'); return false; }
+      if(!/^\d{10}$/.test(phone)){ alert('Enter 10‑digit WhatsApp number.'); return false; }
+      if(cartTotal()<=0){ alert('Add at least one item to cart.'); return false; }
+      return true;
+    }
+
+    // Razorpay
+    payBtn.addEventListener('click', () => {
+      if(!requireBuyer()) return;
+      const amt = cartTotal();
+      const options = {
+        key: 'rzp_test_REPLACE_WITH_YOUR_KEY', // TODO: replace with your Razorpay Key ID
+        amount: amt * 100,
+        currency: 'INR',
+        name: 'MCA Notes by Arvind Sahu',
+        description: orderSummary(),
+        prefill: { name: nameEl.value, email: emailEl.value, contact: '+91'+phoneEl.value },
+        theme: { color: '#0ea5e9' },
+        handler: function (response) {
+          // Success callback
+          const msg = `Payment Success!\nRazorpay Payment ID: ${response.razorpay_payment_id}\nOrder: ${orderSummary()}\nBuyer: ${nameEl.value} (+91${phoneEl.value})`;
+          alert(msg + '\n\nWe\'ll deliver your PDFs on WhatsApp/email shortly.');
+          // Optional: open WhatsApp with order details
+          const text = encodeURIComponent(`Paid via Razorpay\nName: ${nameEl.value}\nPhone: +91${phoneEl.value}\nEmail: ${emailEl.value}\nItems: ${orderSummary()}\nAmount: ${formatINR(amt)}\nRazorpay Payment ID: ${response.razorpay_payment_id}`);
+          window.open(`https://wa.me/918299243030?text=${text}`,'_blank');
+          closeCart();
+        }
+      };
+      if(typeof Razorpay === 'undefined'){ alert('Razorpay SDK not loaded yet. Please try again in 2–3 seconds.'); return; }
+      const rzp = new Razorpay(options);
+      rzp.open();
+    });
+
+    // UPI Deep Link (no SDK)
+    payUpi.addEventListener('click', () => {
+      if(!requireBuyer()) return;
+      const amt = cartTotal();
+      // Replace with your actual UPI ID & name
+      const upiId = 'arvindsahu@upi';
+      const upiName = 'Arvind Sahu';
+      const note = encodeURIComponent('MCA Notes Purchase');
+      const link = `upi://pay?pa=${encodeURIComponent(upiId)}&pn=${encodeURIComponent(upiName)}&am=${encodeURIComponent(amt)}&cu=INR&tn=${note}`;
+      // Try to open UPI app
+      window.location.href = link;
+      setTimeout(()=>{
+        const confirmPaid = confirm('After completing payment in your UPI app, click OK to confirm.');
+        if(confirmPaid){
+          const text = encodeURIComponent(`Paid via UPI\nName: ${nameEl.value}\nPhone: +91${phoneEl.value}\nEmail: ${emailEl.value}\nItems: ${orderSummary()}\nAmount: ${formatINR(amt)}\nUPI ID used: ${upiId}`);
+          window.open(`https://wa.me/918299243030?text=${text}`,'_blank');
+          alert('Thanks! We\'ll deliver your PDFs on WhatsApp/email shortly.');
+          closeCart();
+        }
+      }, 1200);
+    });
+
+    // WhatsApp order (Cash/Manual)
+    whOrder.addEventListener('click', () => {
+      if(!requireBuyer()) return;
+      const amt = cartTotal();
+      const text = encodeURIComponent(`I want to order MCA Notes (Manual).\nName: ${nameEl.value}\nPhone: +91${phoneEl.value}\nEmail: ${emailEl.value}\nItems: ${orderSummary()}\nTotal: ${formatINR(amt)}`);
+      window.open(`https://wa.me/918299243030?text=${text}`,'_blank');
+    });
+
+    // Footer year
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Optional: Simple privacy/refund anchors -->
+  <section class="container section" id="refund">
+    <h3>Refund Policy</h3>
+    <p>If you do not receive your notes after a successful payment, contact us on WhatsApp within 24 hours with your payment reference for an immediate resend or a full refund.</p>
+  </section>
+  <section class="container section" id="privacy">
+    <h3>Privacy</h3>
+    <p>We collect your name, WhatsApp number and (optionally) email to deliver your notes. We do not sell your data. For Razorpay payments, card/UPI details are processed by Razorpay on their secure checkout; we do not see or store those details.</p>
+  </section>
 </body>
 </html>
