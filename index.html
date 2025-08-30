@@ -8,22 +8,78 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+  <!-- Coolors Palette Widget -->
+  <script src="https://coolors.co/palette-widget/widget.js"></script>
+  <script data-id="06187104681648911">new CoolorsPaletteWidget("06187104681648911", ["003049","d62828","f77f00","fcbf49","eae2b7"]); </script>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%232c3e50'/%3E%3Ctext x='50' y='62' text-anchor='middle' font-size='56' font-family='Arial' fill='white'%3EMS%3C/text%3E%3C/svg%3E"/>
   <style>
-    :root{
-      --bg:#f5f7fb; --card:#ffffff; --ink:#0f1724; --muted:#6b7280; --brand:#0f1724; --accent:#0ea5e9; --ring:rgba(14,165,233,.18);
+    :root {
+      --bg: #f9fafb;
+      --card: #ffffff;
+      --ink: #1e293b;
+      --muted: #64748b;
+      --brand: #0ea5e9;
+      --accent: #ef4444;
+      --secondary: #f97316;
+      --tertiary: #fbbf24;
+      --ring: rgba(14, 165, 233, 0.3);
+      --shadow: rgba(0, 0, 0, 0.1);
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;height:100%;font-family:'Quicksand',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased}
-    h1,h2,h3,h4,.title{font-family:'Quicksand',sans-serif}
-    a{color:inherit}
+    * {
+      box-sizing: border-box;
+    }
+    html, body {
+      margin: 0;
+      height: 100%;
+      font-family: 'Quicksand', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+      scroll-behavior: smooth;
+    }
+    h1, h2, h3, h4, .title {
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 600;
+      color: var(--brand);
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+    }
+    a {
+      color: var(--brand);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover, a:focus {
+      color: var(--accent);
+      outline: none;
+    }
+
+    /* Quicksand font class */
+    .quicksand-unique {
+      font-family: "Quicksand", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
+    }
 
     /* Layout container */
     .container{max-width:1100px;margin-inline:auto;padding:20px}
 
     /* Header / topbar */
-    header{background:linear-gradient(135deg,#123243,#0b1220);color:#fff}
+    header{background:linear-gradient(135deg,#003049,#001c30);color:#fff}
     .topbar{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:16px;flex-wrap:wrap}
+    @media (max-width: 520px) {
+      .topbar {
+        flex-wrap: nowrap;
+      }
+      .brand {
+        flex: 1 1 auto;
+      }
+      .cart-btn {
+        order: 2;
+        margin-left: auto;
+      }
+    }
     .brand{display:flex;gap:12px;align-items:center;min-width:0}
     .brand-logo{width:44px;height:44px;border-radius:10px;background:rgba(255,255,255,0.06);display:grid;place-items:center;font-weight:700}
     .brand h1{margin:0;font-size:18px;line-height:1}
@@ -112,6 +168,100 @@
     /* Small helpers */
     .muted small{font-size:12px}
   
+    /* Animated Ad Banner with Continuous Running Animation */
+    .animated-ad {
+      position: relative;
+      background: linear-gradient(135deg, #0ea5e9, #8b5cf6);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 16px;
+      margin: 20px 0;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(14, 165, 233, 0.4);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .animated-ad::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 60%);
+      animation: glow 4s ease-in-out infinite;
+    }
+    
+    .animated-ad::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      animation: shimmer 3s ease-in-out infinite;
+    }
+    
+    .ad-text {
+      position: relative;
+      z-index: 2;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    
+    .ad-line-1 {
+      display: block;
+      animation: pulseGlow 2s ease-in-out infinite;
+      margin-bottom: 8px;
+      text-shadow: 0 0 10px rgba(255,255,255,0.3);
+    }
+    
+    .ad-line-2 {
+      display: block;
+      animation: slideBounce 3s ease-in-out infinite;
+      font-size: 16px;
+      opacity: 0.9;
+      text-shadow: 0 0 8px rgba(255,255,255,0.2);
+    }
+    
+    @keyframes glow {
+      0%, 100% { transform: rotate(0deg) scale(1); opacity: 0.6; }
+      50% { transform: rotate(180deg) scale(1.2); opacity: 0.8; }
+    }
+    
+    @keyframes shimmer {
+      0% { left: -100%; }
+      100% { left: 100%; }
+    }
+    
+    @keyframes pulseGlow {
+      0%, 100% { 
+        transform: scale(1); 
+        text-shadow: 0 0 10px rgba(255,255,255,0.3);
+      }
+      50% { 
+        transform: scale(1.05); 
+        text-shadow: 0 0 20px rgba(255,255,255,0.6), 0 0 30px rgba(255,255,255,0.4);
+      }
+    }
+    
+    @keyframes slideBounce {
+      0%, 100% { 
+        transform: translateX(0) scale(1);
+        text-shadow: 0 0 8px rgba(255,255,255,0.2);
+      }
+      25% { 
+        transform: translateX(-5px) scale(1.02);
+        text-shadow: 0 0 12px rgba(255,255,255,0.3);
+      }
+      75% { 
+        transform: translateX(5px) scale(1.02);
+        text-shadow: 0 0 12px rgba(255,255,255,0.3);
+      }
+    }
 
     /* Policy cards (Refund & Privacy) */
     .policy-grid{display:grid;gap:16px;margin-top:8px}
@@ -138,8 +288,8 @@
     "sameAs": [],
     "address": {"@type":"PostalAddress","addressCountry":"IN"},
     "makesOffer": [
-      {"@type":"Offer","priceCurrency":"INR","price":"49","itemOffered":{"@type":"Product","name":"MCA 101 - Programming in C & Data Structure"}},
-      {"@type":"Offer","priceCurrency":"INR","price":"49","itemOffered":{"@type":"Product","name":"MCA 102 - Computer Organization & Architecture"}}
+      {"@type":"Offer","priceCurrency":"INR","price":"11","itemOffered":{"@type":"Product","name":"MCA 101 - Programming in C & Data Structure"}},
+      {"@type":"Offer","priceCurrency":"INR","price":"11","itemOffered":{"@type":"Product","name":"MCA 102 - Computer Organization & Architecture"}}
     ]
   }
   </script>
@@ -150,7 +300,6 @@
       <div class="brand">
         <div class="brand-logo" aria-hidden="true">📝</div>
         <div>
-          <h1>MCA Notes by Arvind Sahu</h1>
           <small>Dr. Ram Manohar Lohia Avadh University, Ayodhya</small>
         </div>
       </div>
@@ -167,6 +316,12 @@
   </header>
 
   <main class="container">
+    <div class="animated-ad">
+      <div class="ad-text">
+        <span class="ad-line-1">🎉 All MCA Notes are FREE – you just pay ₹11 only as a small platform fee.</span>
+        <span class="ad-line-2">Get instant access to all documents in one place after payment.</span>
+      </div>
+    </div>
     <div class="infobar">💡 Tip: Click a title to preview the file. Use <strong>Add to Cart</strong> to purchase securely via Razorpay or UPI.</div>
 
     <section id="products" class="section">
@@ -251,7 +406,7 @@
         <h4>Contact</h4>
         <p><strong>Name:</strong> Arvind Sahu</p>
         <p><strong>Phone/WhatsApp:</strong> <a href="https://wa.me/918299243030" target="_blank" rel="noopener">+91 8299243030</a></p>
-        <p><strong>Email:</strong> <a href="mailto:engravi13@gmail.com">engravi13@gmail.com</a></p>
+        <p><strong>Email:</strong> <a href="mailto:engravi13@example.com">engravi13@example.com</a></p>
       </div>
     </div>
     <div class="container legal">© <span id="yr"></span> Arvind Sahu · MCA Notes · All rights reserved.</div>
@@ -277,16 +432,14 @@
     const grid = document.getElementById('productGrid');
     grid.innerHTML = PRODUCTS.map(p => `
       <article class="card" data-id="${p.id}">
-        <div class="card-inner">
-          <span class="badge">PDF</span>
-          <div class="row">
-            <div class="title">${p.title}</div>
-            <div class="price">${formatINR(p.price)}</div>
-          </div>
-          <div class="muted">University: Dr. Ram Manohar Lohia Avadh University, Ayodhya</div>
-          <div class="actions">
-            <a class="btn" style="background:#f1f5f9" href="${encodeURI(p.file)}" target="_blank" rel="noopener">Preview</a>
-            <button class="btn btn-primary" data-add="${p.id}">Add to Cart</button>
+        <div class="card-inner" style="background:#f9fcff; border-radius:12px; padding:16px; display:flex; flex-direction:column; gap:12px;">
+          <span class="badge" style="background:#d9f0ff; color:#3a8edc; font-weight:600; font-size:12px; padding:6px 12px; border-radius:9999px; width:fit-content;">PDF</span>
+          <div class="title" style="font-weight:700; font-size:18px; color:#0a3d62;">${p.title}</div>
+          <div class="price" style="font-weight:700; font-size:16px; color:#000; align-self:flex-end;">${formatINR(p.price)}</div>
+          <div class="muted" style="color:#64748b; font-size:14px;">University: Dr. Ram Manohar Lohia Avadh University, Ayodhya</div>
+          <div class="actions" style="display:flex; flex-direction:column; gap:8px;">
+            <a class="btn" href="${encodeURI(p.file)}" target="_blank" rel="noopener" style="background:#d9f0ff; color:#3a8edc; font-weight:600; padding:10px 0; border-radius:12px; text-align:center;">Preview</a>
+            <button class="btn btn-primary" data-add="${p.id}" style="background:#ef4444; color:#fff; font-weight:700; padding:12px 0; border-radius:12px; width:100%;">Add to Cart</button>
           </div>
         </div>
       </article>
@@ -463,42 +616,23 @@
     <div class="policy-grid">
       <div class="policy-card" id="refund">
         <h4>Refund Policy</h4>
-        <div class="meta">Fast, fair and clear — we aim to deliver within 24 hours</div>
+        <div class="meta">📦 Delivery within 24 hours via WhatsApp/email after payment.</div>
         <ul class="policy-list">
-          <li><strong>Delivery promise:</strong> We deliver PDFs to the WhatsApp number or email you provide within <strong>24 hours</strong> of successful payment.</li>
-          <li><strong>Refund window:</strong> If you do not receive the files within 24 hours, you are eligible for a full refund.</li>
-          <li><strong>How to request:</strong> Send a WhatsApp message to <a href="https://wa.me/918299243030" target="_blank" rel="noopener">+91 8299243030</a> with your payment reference (Razorpay / UPI txn id) and your name.</li>
-          <li><strong>Automatic verification:</strong> Please share the payment screenshot if available; this speeds up the process.</li>
+          <li> If not delivered, you get a full refund.</li>
+          <li> Request via WhatsApp +91 8299243030 with your payment ID.</li>
+          <li> Refunds processed within 3–5 business days.</li>
         </ul>
-        <div class="policy-cta">
-          <a class="btn-primary-ghost" href="https://wa.me/918299243030" target="_blank" rel="noopener">Contact on WhatsApp</a>
-          <a class="btn-outline" href="mailto:engravi13@gmail.com">Email Support</a>
-        </div>
-        <div class="small-note">Note: Refunds are processed to the original payment method within 3–5 business days after verification.</div>
-        <details class="policy-details">
-          <summary>Full refund conditions</summary>
-          <p>We guarantee a full refund if we cannot deliver the purchased notes within 24 hours after confirmed payment. Refunds are not issued for buyer errors (wrong email/number) unless the seller is able to contact and correct details.</p>
-        </details>
       </div>
 
       <div class="policy-card" id="privacy">
-        <h4>Privacy</h4>
-        <div class="meta">We collect only what we need to deliver your purchase</div>
+        <h4>Privacy Policy</h4>
+        <div class="meta">🔒 We only collect your name, WhatsApp number, and email (optional).</div>
         <ul class="policy-list">
-          <li><strong>What we collect:</strong> name, WhatsApp number, and email (optional).</li>
-          <li><strong>Why:</strong> to deliver your PDFs and to contact you about your order/refund.</li>
-          <li><strong>How long:</strong> Buyer contact details are kept for up to 90 days for support and refund purposes, then deleted unless needed for ongoing support.</li>
-          <li><strong>Third parties:</strong> Payment details (card/UPI) are handled by Razorpay — we never see raw card or bank credentials.</li>
+          <li> Used only to deliver your notes and support refunds.</li>
+          <li> Data is kept for 90 days, then deleted.</li>
+          <li> Payments are securely handled by Razorpay — we never see card/UPI details.</li>
+          <li> Your data is never shared or sold.</li>
         </ul>
-        <div class="policy-cta">
-          <a class="btn-outline" href="#privacy" onclick="document.getElementById('buyerEmail').focus();return false">Update contact</a>
-          <a class="btn-primary-ghost" href="https://wa.me/918299243030" target="_blank" rel="noopener">Ask on WhatsApp</a>
-        </div>
-        <div class="small-note">We do not sell your data. For details on data handling, reply on WhatsApp or email us and we'll send a full copy of the privacy notice.</div>
-        <details class="policy-details">
-          <summary>Data retention & security</summary>
-          <p>Files are stored privately. When auto‑delivery is enabled, we use signed, time-limited URLs so downloads expire after a set period. Server secrets (Razorpay secret, storage credentials) are kept out of the client and protected by your hosting provider.</p>
-        </details>
       </div>
     </div>
   </section>
